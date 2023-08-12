@@ -1,9 +1,3 @@
-#!/usr/bin/env python
-# coding: utf-8
-
-# In[1]:
-
-
 from os import chdir, getcwd, listdir, makedirs
 from os.path import join,splitext
 from docx import Document
@@ -19,45 +13,17 @@ from PyPDF2 import PdfReader
 import io
 from pdf2image import convert_from_path
 
-
-# In[4]:
-
-
 current_dir = getcwd()
-
-
-# In[5]:
-
-
 # Access a specific folder within the current directory
 target_folder = join(current_dir, r"C:\Users\acer\Desktop\test")
 print("Target Folder Path:", target_folder)
-
-
-# In[6]:
-
-
 # List files and subdirectories within a folder
 file_list = listdir(target_folder)
 print("Files in Target Folder:", file_list)
-
-
-# In[7]:
-
-
 stopwords = list(STOP_WORDS)
 nlp = spacy.load('en_core_web_sm')
 content = ""
-
-
-# In[8]:
-
-
 pytesseract.pytesseract.tesseract_cmd = r'C:\Program Files\Tesseract-OCR\tesseract.exe'
-
-
-# In[11]:
-
 
 for i in file_list:
     path = r"C:\Users\acer\Desktop\test\{}".format(i)
@@ -161,10 +127,3 @@ for i in file_list:
     print(summary)
     print(len(summary))
     print(len(content))
-
-
-# In[ ]:
-
-
-
-
